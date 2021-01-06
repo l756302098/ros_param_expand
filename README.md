@@ -8,16 +8,16 @@ dynamic update/save pram
 * yaml-cpp(0.6)
 
 #  Install﻿
-* install yaml-cpp
-** git clone https://github.com/jbeder/yaml-cpp
-** mkdir build
-** cmake .. -DYAML_BUILD_SHARED_LIBS=ON
-** make -j4 && sudo make install
-* install param_extend
-** cd ~/your_workspace/src
-** git clone https://github.com/l756302098/ros_param_expand.git
-** cd ~/your_workspace
-** catkin_make -j4
+* install yaml-cpp    
+**  git clone https://github.com/jbeder/yaml-cpp    
+**  mkdir build    
+**  cmake .. -DYAML_BUILD_SHARED_LIBS=ON    
+**  make -j4 && sudo make install    
+*  install param_extend    
+** cd ~/your_workspace/src    
+** git clone https://github.com/l756302098/ros_param_expand.git    
+** cd ~/your_workspace    
+** catkin_make -j4    
 
 #  Use
 param_client is demo node
@@ -49,9 +49,11 @@ int main(int argc, char** argv){
   return 0;
 }
 ```
-### roscore
-### rosrun param_client client
-* add/update
-rosservice call /param_client_node/param_server/set
-* del
+#  Run
+* roscore    
+* rosrun param_client client
+
+** add/update    
+rosservice call /param_client_node/param_server/set    
+** del    
 rosservice call /param_client_node/param_server/del
