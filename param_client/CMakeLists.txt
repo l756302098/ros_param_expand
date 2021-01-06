@@ -15,7 +15,7 @@ include_directories(
 )
 
 catkin_package(
-  INCLUDE_DIRS include
+#  INCLUDE_DIRS include
   LIBRARIES param_client 
   CATKIN_DEPENDS roscpp std_msgs param_server
 #  DEPENDS system_lib
