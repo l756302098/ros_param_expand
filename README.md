@@ -41,8 +41,13 @@ int main(int argc, char** argv){
   server.setCallback(f);
   bool b_value;
   float f_value;
-  server.get("boolean-value",b_value);
-  server.get("floating-value",f_value);
+  if(server.exist("boolean-value")){
+    server.get("boolean-value",b_value);
+  }
+  if(server.exist("floating-value")){
+    server.get("floating-value",f_value);
+  }
+  std::cout << "b_value:" << b_value << std::endl;
   std::cout << "f_value:" << f_value << std::endl;
   ros::spin();
 
