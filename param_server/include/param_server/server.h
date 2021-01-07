@@ -109,7 +109,7 @@ namespace param_server
             temp_path_ = path_+".temp";
             load();
             //register ros
-            notify_pub_ = node_handle_.advertise<param_server::KeyValues>("/param_server/list",1);
+            notify_pub_ = node_handle_.advertise<param_server::KeyValues>("param_server/list",1);
             set_service_ = node_handle_.advertiseService("param_server/set",&Server::setConfigCallback, this);
             del_service_ = node_handle_.advertiseService("param_server/del",&Server::delConfigCallback, this);
             timer_ = node_handle_.createTimer(ros::Duration(1.0), &Server::pub, this, false);

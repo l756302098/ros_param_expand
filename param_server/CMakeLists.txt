@@ -13,13 +13,8 @@ find_package(catkin REQUIRED COMPONENTS
 find_package(Boost REQUIRED COMPONENTS system)
 find_package(yaml-cpp REQUIRED)
 
-include_directories(
-  include
-  ${catkin_INCLUDE_DIRS}
-  ${Boost_INCLUDE_DIRS}
-)
-
 add_message_files(
+  DIRECTORY msg
   FILES
   KeyValue.msg
   KeyValues.msg
@@ -27,6 +22,7 @@ add_message_files(
 
 ## Generate services in the 'srv' folder
 add_service_files(
+  DIRECTORY srv
   FILES
   Param.srv
 )
@@ -34,6 +30,12 @@ add_service_files(
 generate_messages(
   DEPENDENCIES
   std_msgs
+)
+
+include_directories(
+  include
+  ${catkin_INCLUDE_DIRS}
+  ${Boost_INCLUDE_DIRS}
 )
 
 catkin_package(
@@ -45,8 +47,7 @@ catkin_package(
 add_executable(param_test src/test.cpp src/server.cpp)
 target_link_libraries(param_test ${catkin_LIBRARIES}  ${OpenCV_LIBRARIES} yaml-cpp)
 
-add_library(param_server
-  src/server.cpp)
+add_library(param_server src/server.cpp)
 target_link_libraries(param_server ${Boost_LIBRARIES} yaml-cpp)
 
 install(DIRECTORY include/param_server/

@@ -3,8 +3,8 @@ dynamic update/save pram
 
 #  Depend
 
-* ubuntu(18.04)
-* ros(melodic)
+* ubuntu(18.04/16.04)
+* ros(melodic/kinetic)
 * yaml-cpp(0.6)
 
 #  Install﻿
