@@ -32,16 +32,16 @@ generate_messages(
   std_msgs
 )
 
-include_directories(
-  include
-  ${catkin_INCLUDE_DIRS}
-  ${Boost_INCLUDE_DIRS}
-)
-
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES param_server
   CATKIN_DEPENDS roscpp std_msgs roslib
+)
+
+include_directories(
+  include
+  ${catkin_INCLUDE_DIRS}
+  ${Boost_INCLUDE_DIRS}
 )
 
 add_executable(param_test src/test.cpp src/server.cpp)
