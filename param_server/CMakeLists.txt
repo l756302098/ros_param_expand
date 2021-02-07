@@ -46,9 +46,11 @@ include_directories(
 
 add_executable(param_test src/test.cpp src/server.cpp)
 target_link_libraries(param_test ${catkin_LIBRARIES}  ${OpenCV_LIBRARIES} yaml-cpp)
+add_dependencies(param_test param_server_generate_messages_cpp)
 
 add_library(param_server src/server.cpp)
 target_link_libraries(param_server ${Boost_LIBRARIES} yaml-cpp)
+add_dependencies(param_server param_server_generate_messages_cpp)
 
 install(DIRECTORY include/param_server/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}

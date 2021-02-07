@@ -6,7 +6,6 @@ void callback(param_server::SimpleType &config)
     for (auto &kv : config) {
         ROS_INFO("callback key:%s value:%s",kv.first.c_str(),kv.second.c_str());
     }
-    
 }
 
 int main(int argc, char** argv){
